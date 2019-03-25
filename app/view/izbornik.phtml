@@ -1,0 +1,72 @@
+<style>
+h1 {
+    float: left;
+    display: initial;
+    margin: 0;
+    color: white;
+}
+
+
+</style>
+
+<header>	
+	<nav class="mnu">
+		<div class="container">
+            <div class="logo" id="logo">
+                <h1><?php echo App::config("nazivApp") ?></h1>
+                
+            </div>
+                <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+                <input type="checkbox" id="drop">
+                    <ul class="menu mt-1">
+                        <li class="mr-lg-4 mr-3 active"><a href="<?php echo App::config("url")."index" ?>">Početna</a></li>
+
+                        <li class="mr-lg-4 mr-3"><a href="#services" class="scroll">Asortiman proizvoda</a>
+                            <ul class="menu vertical">
+                            	<li><a href="<?php echo App::config("url")."bozuri" ?>">Božuri</a></li>
+                                 <li><a href="<?php echo App::config("url")."ostalo" ?>">Ostalo cvijeće</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="mr-lg-4 mr-3"><a href="<?php echo App::config("url")."onama" ?>" class="scroll">O nama</a></li>
+						<li class="mr-lg-4 mr-3"><a href="<?php echo App::config("url")."kontakt" ?>" class="scroll">Kontakt</a></li>
+                        <!-- <li><a href="#contact" class="scroll">Contact</a></li> -->
+                        <!-- provjerava da li je ulogiran i da li je ulogiran administrator (id 1) ili neki drugi korisnik -->
+                        <?php if(Session::getInstance()->isLogiran() && Session::getInstance()->getUser()->id==1): ?>
+                        <li class="mr-lg-4 mr-3">
+                            <a href="<?php echo App::config("url")."product/index" ?>">Proizvodi</a>
+                        </li>
+                        <li class="mr-lg-4 mr-3">
+                            <a href="<?php echo App::config("url")."customer/index" ?>">Kupci</a>
+                        </li>
+                        
+                        
+                        
+                        <?php endif; ?>
+                        
+                        <?php if(Session::getInstance()->isLogiran() && Session::getInstance()->getUser()->id>1): ?>
+                    
+                        <li class="mr-lg-4 mr-3">
+                            <a href="<?php echo App::config("url")."narudzba" ?>">Narudžba</a>
+                        </li>
+
+                        <?php endif; ?> 
+
+                        <!-- Prijava/odjava -->
+                        <li class="mr-lg-4 mr-3">
+                            <?php if(Session::getInstance()->isLogiran()): ?>
+                            <a href="<?php echo App::config("url") ?>admin/odjava" class="scroll" > Odjava
+                                <?php echo Session::getInstance()->getUser()->firstnameSurname ?>
+                            </a>
+                            <?php else:?>
+                            <a href="<?php echo App::config("url") ?>admin/prijava">Prijava/Registracija</a>
+                            <?php endif;?>
+                        </li>
+                         <!--/Prijava/odjava -->  
+                    </ul>  
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+</header>

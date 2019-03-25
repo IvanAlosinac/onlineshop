@@ -1,0 +1,11 @@
+<?php
+if(isset($_POST['submit'])){
+    $msg = 'Name: ' .$_POST['Name'] . "\n"
+           . 'Email: ' . $_POST['Email'] . "\n"
+           . 'Message' . $_POST['Message'];
+    mail('alosinac111@gmail.com', 'Poruka user', $msg);
+    header('location: contact-us-thank-you.phtml');
+}else{
+    header('location: kontakt.phtml');
+    exit;
+}

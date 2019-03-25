@@ -1,0 +1,80 @@
+<style>
+.dodaj{
+width: 400px;
+margin: auto auto;
+padding: 90px 0 0 0;
+text-align: center;
+}
+.tabela{
+  width: 400px;
+  margin: auto auto;
+}
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+</style>
+
+
+<div class="dodaj">
+  <a href="<?php echo App::config("url") ?>product/prepareadd" class="success button expanded">
+      <h2>Dodaj novi proizvod</h2>
+  </a> 
+</div>
+<div class="tabela"> 
+          <table>
+              <thead>
+                  <tr>
+                      <div class="col-sm-2 col-sm-offset-5">
+                      <th>Naziv proizvoda</th>
+                      </div>
+                      <div class="col-sm-2 col-sm-offset-5">
+                      <th>Opis</th>
+                      </div>
+                      <div class="col-sm-2 col-sm-offset-5">
+                        <th>Cijena po kom (kn)</th>
+                      </div>
+                      <div class="col-sm-2 col-sm-offset-5">
+                        <th>Zaliha</th>
+                      </div>
+                      <div class="col-sm-2 col-sm-offset-5">
+                        <th>Kategorija</th>
+                      </div>
+                      <div class="col-sm-2 col-sm-offset-5">
+                        <th>Akcija</th>
+                      </div> 
+
+
+                  </tr>
+              </thead>
+              <tbody>
+                  <?php foreach($products as $product): ?>
+                  <tr>
+                      <td><?php echo $product->productname ?></td>
+                      <td><?php echo $product->productdescription ?></td>
+                      <td><?php echo $product->priceperpiece ?></td>
+                      <td><?php echo $product->stock ?></td>
+                      <td><?php echo $product->category ?></td>
+                      
+                      <td> 
+                          <a href="<?php echo App::config("url") ?>product/prepareedit/<?php echo $product->id ?>">
+                              <i class="fas fa-edit fa-2x"></i>
+                          </a>
+
+                          <?php if($product->stock==0): ?>
+                              <a style="color: red;"
+                              href="<?php echo App::config("url") ?>product/delete/<?php echo $product->id ?>">
+                                  <i class="fas fa-trash fa-2x"></i>
+                              </a>
+                          <?php endif; ?>
+                      
+                      </td>
+                  </tr>
+                  <?php endforeach;?>
+              </tbody>
+          </table>
+</div>
+      
+
+

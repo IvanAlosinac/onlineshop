@@ -1,0 +1,74 @@
+<style>
+.dodaj{
+width: 400px;
+margin: auto auto;
+padding: 90px 0 0 0;
+text-align: center;
+color:white;
+}
+
+.tabela{
+  width: 400px;
+  margin: auto auto;
+}
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+/* body {
+  background: #76b852;
+} */
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+</style>
+
+<div class="dodaj">
+    <a href="<?php echo App::config("url") ?>customer/prepareadd" class="success button expanded">
+        <h2>Dodaj novog kupca</h2>
+    </a> 
+</div>
+<!-- <div class="grid-x"> -->
+    <?php foreach($customers as $customer): ?>
+    <div class="cell large-6">
+        <div class="bs-callout bs-callout-default">
+            Kupac:
+            <h2><?php echo $customer->companyname?></h2>
+            <br />
+            <h5>
+            <?php echo $customer->firstname?>
+            <?php echo $customer->surname?>
+            </h5>
+            Kontakt:
+            <?php echo $customer->phone ?>
+            Email:
+            <?php echo $customer->email?>
+            <a href="<?php echo App::config("url") ?>customer/prepareedit/<?php echo $customer->id ?>">
+        <i class="fas fa-edit fa-2x"></i>
+            </a>
+            
+            <?php if($customer->total==0): ?>
+        <a style="color: red;"
+            href="<?php echo App::config("url") ?>customer/delete/<?php echo $customer->id ?>">
+            <i class="fas fa-trash fa-2x"></i>
+        </a>
+        <hr />
+        <?php endif; ?>
+    
+
+
+        </div>
+    </div>
+    <?php endforeach; ?>   
+</div>
+
+<nav aria-label="Pagination">
+  <ul class="pagination text-center">
+    <li class="pagination-previous"><a href="<?php echo App::config("url") ?>customer/index/<?php echo $prethodna ?>" aria-label="Next page">Prethodna <span class="show-for-sr"></span></a></li>
+    <li class="pagination-next"><a href="<?php echo App::config("url") ?>customer/index/<?php echo $sljedeca ?>" aria-label="Next page">Sljedeća <span class="show-for-sr"></span></a></li>
+  </ul>
+</nav>

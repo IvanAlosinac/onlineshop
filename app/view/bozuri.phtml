@@ -1,0 +1,82 @@
+<section class="blog_w3l py-5" id="news">
+	<div class="container py-lg-5">
+			<div class="w3l_head">
+				<h4 class="heading text-center">Naši božuri</h4>
+				<p class="subs mt-4 text-center mx-auto">Trenutno u ponudi...</p>
+			</div>
+
+		<div class="row blog_w3l_top py-lg-5 py-3 mt-3 ">
+		<?php foreach($bozuri as $bozur): 
+			if($bozur->category>1){
+				return;
+			}
+			?>
+			<div class="col-lg-6 blog_w3l_left">
+				<div class="row blog_w3l_left1">
+					<div class="col-md-5 blog_w3l-1">
+					<img src="<?php echo App::config("url")?>img\<?php echo $bozur->productimage?>" alt="news image"  class="img-fluid">
+					</div>
+					<div class="col-md-7 blog_w3l-2">
+						<h3><?php echo $bozur->productname?></h3>
+						<p class="mt-3"><?php echo $bozur->productdescription?></p>
+					</div>
+				</div>
+			</div>
+			<?php endforeach; ?>
+		</div>
+
+	</div>
+</section>
+				<!-- <div class="row blog_w3l_left2">
+					<div class="col-md-5 blog_w3l-1">
+						<img src="images/g5.jpg" alt="news image" class="img-fluid">
+					</div>
+					<div class="col-md-7 blog_w3l-2">
+						
+						<h3>pellentesque mi non</h3>
+						<p class="mt-3">Nulla pellentesque mi non laoreet eleifend. Integer porttitor mollisar lorem, at molestie arcu pulvinar ut.</p>
+					</div>
+				</div> -->
+				
+			
+			<!-- <div class="col-lg-6 blog_w3l_right">
+				<div class="row blog_w3l_left1">
+					<div class="col-md-5 blog_w3l-1">
+						<img src="images/g6.jpg" alt="news image" class="img-fluid">
+					</div>
+					<div class="col-md-7 blog_w3l-2">
+						
+						<h3>pellentesque mi non</h3>
+						<p class="mt-3">Nulla pellentesque mi non laoreet eleifend. Integer porttitor mollisar lorem, at molestie arcu pulvinar ut.</p>
+					</div>
+				</div>
+				<div class="row blog_w3l_left2">
+					<div class="col-md-5 blog_w3l-1">
+						<img src="images/g7.jpg" alt="news image" class="img-fluid">
+					</div>
+					<div class="col-md-7 blog_w3l-2">
+						
+						<h3>pellentesque mi non</h3>
+						<p class="mt-3">Nulla pellentesque mi non laoreet eleifend. Integer porttitor mollisar lorem, at molestie arcu pulvinar ut.</p>
+				</div>
+				
+				</div>
+			</div> -->
+		
+
+
+<!-- <div class="grid-x">
+    <?php foreach($bozuri as $bozur): ?>
+    <div class="cell large-3">
+        <div class="success callout bozuri">
+            <h1><?php echo $bozur->productname?>
+    <br />
+    <?php echo $bozur->productdescription?>
+    </h1>
+    <?php echo $operater->email?>
+
+    </div>
+    </div>
+
+    <?php endforeach; ?>
+</div> -->

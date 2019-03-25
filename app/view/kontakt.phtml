@@ -1,0 +1,54 @@
+
+<section class="foot-1 py-5" id="contact">
+		<div class="container py-lg-5">
+			<div class="row foot-1-top">
+				<div class="col-lg-3 col-md-6 col-sm-6 foot-1_grid_left">
+					<h4 class="mb-3">KONTAKT</h4>
+					<div class="foot-top pt-3">
+						<ul>
+							
+							<li><h4>Obiteljsko poljoprivredno gospodarstvo Alošinac</h4></li>
+							<li><p>Adresa: Braće Radić 11, Bistrinci, 31551 Belišće</p></li>
+							<li><p>Telefon: 031/662 228</p><br /><p> Mobitel: 091/566 7552</p></li>
+							<li><p>E-mail: alosinac111@gmail.com</p></li>
+						</ul>
+					</div>
+				</div>
+				<!-- <div class="col-lg-3 col-md-6 col-sm-6 foot-1_grid_middle">
+					<h4 class="mb-3">Pellentesque mi</h4>
+					<div class="foot-top pt-3">
+						<ul>
+							<li><a href="#">Semper mod quisturpis nisi</a></li>
+							<li><a href="#">Semper mod quisturpis nisi</a></li>
+							<li><a href="#">Semper mod quisturpis nisi</a></li>
+							<li><a href="#">Semper mod quisturpis nisi</a></li>
+							<li><a href="#">Semper mod quisturpis nisi</a></li>
+							<li><a href="#">Semper mod quisturpis nisi</a></li>
+							<li><a href="#">Semper mod quisturpis nisi</a></li>
+						</ul>
+					</div>
+				</div> -->
+				<div class="col-lg-6 foot-1_grid_right">
+					<h4 class="mb-4">Pošaljite nam poruku!</h4>
+					<div class="contact_grid_right mt-5 mx-auto text-left">
+						<form action="<?php echo App::config("url") ?>message/email" method="post">
+							<div class="row contact_top">
+								<div class="col-sm-6">
+									<input type="text" name="Name" placeholder="Vaše ime" required="">
+								</div>
+								<div class="col-sm-6">
+									<input type="email" name="Email" placeholder="E-mail" required="">
+								</div>
+							</div>							
+								<textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') 
+								{this.value = 'Message...';}" required="">Vaša poruka...</textarea>
+								<input type="submit" value="Pošalji">
+								
+						</form>
+			</div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+

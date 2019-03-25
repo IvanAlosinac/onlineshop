@@ -1,0 +1,20 @@
+<form class="log-in-form" method="post" 
+action="<?php echo App::config("url") ?>customer/add">
+
+ <?php include_once "kontrole.phtml" ?>
+ 
+    <div class="form">
+        <div class="grid-x">
+            <div class="large-6 columns" >
+            <button type="submit"><a href="<?php echo App::config("url") ?>customer/index" >Odustani</a></button>
+            </div>
+            <div class="large-6 columns"  >
+                <input type="submit" class="button expanded" value="Dodaj novog" />
+            </div>
+        </div>
+    </div>
+
+ 
+
+</form>
+<?php echo $poruka ?>
