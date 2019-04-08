@@ -12,7 +12,7 @@ class AdminController
     {
 
         $db=Db::getInstance();
-        $izraz = $db->prepare("select id,firstname,surname,email,userpassword from user where email=:email");
+        $izraz = $db->prepare("select id,firstname,surname,homeaddress,email,userpassword from user where email=:email");
         $izraz->execute(["email"=>Request::post("email")]);
 
         
@@ -25,6 +25,7 @@ class AdminController
                 $user->id=$red->id;
                 $user->firstname=$red->firstname;
                 $user->surname=$red->surname;
+                $user->homeaddress=$red->homeaddress;
                 $user->email=$red->email;
                 $user->firstnameSurname=$red->firstname . " " . $red->surname;
 
@@ -35,7 +36,12 @@ class AdminController
                  $view->render('index');
             }else{
                 
-                $view->render('narudzba');                                      // za sve ostale korisnike
+                $view->render(
+                    'narudzba',
+                    [
+                       "narudzba"=>Asortiman::read()
+                    ]
+                );                                                               // za sve ostale korisnike
             }
 
             }else{

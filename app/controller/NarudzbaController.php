@@ -12,4 +12,17 @@ class NarudzbaController{
             ]
         );
     }
+
+    function izracun(){
+
+        
+        $view = new View();
+        $view->render(
+            'izvrsenanarudzba',
+            [
+                "narudzba"=>Asortiman::read()
+             ]
+        );
+        
+    }
 }

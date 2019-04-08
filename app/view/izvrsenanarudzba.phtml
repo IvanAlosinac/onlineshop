@@ -1,0 +1,81 @@
+<section class="blog_w3l py-5" id="news">
+    <!-- Naslov -->
+    <div class="container py-lg-5">
+        <h6><?php echo "Vaša narudžba" . " " . Session::getInstance()->getUser()->firstname . "!"; ?></h6>
+     
+    </div>
+    <!-- Elementi narudžbe -->
+    <div class="row blog_w3l_top py-lg-5 py-3 mt-3 ">
+        <div class="col-lg-11 blog_w3l_left">
+            <div class="row blog_w3l_left1">
+                <div class="col">
+                    <?php foreach($narudzba as $narudzba): ?>
+                    <h3><?php echo $narudzba->productname?></h3><br />
+                    <?php endforeach; ?>
+                </div>
+                <div class="col" style="padding: 10px">   
+                    <h5>Boja: koraljna</h5><br />
+                    <h5>Boja: tamno crvena</h5><br />
+                    <h5>Boja: ružićasta</h5><br />
+                    <h5>Boja: bijela</h5><br />
+                    <h5>Boja: mix</h5><br /> 
+                </div>
+                <div class="col">
+                    <h3>Naručeno <?php echo $_POST["b1"]?> kom </h3><br />
+                    <h3>Naručeno <?php echo $_POST["b2"]?> kom </h3><br />
+                    <h3>Naručeno <?php echo $_POST["b3"]?> kom </h3><br />
+                    <h3>Naručeno <?php echo $_POST["b4"]?> kom </h3><br />
+                    <h3>Naručeno <?php echo $_POST["b5"]?> kom </h3><br />
+                </div>
+                <!-- Izračun cijene proizvoda -->
+                <div class="col">
+                    <?php
+                    error_reporting(E_ERROR);
+                    ini_set("display_errors",1);
+
+                    $value =array($_POST["b1"],$_POST["b2"],$_POST["b3"],$_POST["b4"],$_POST["b5"]); 
+                    $total=0;
+
+                    foreach($value as $value):{
+                            
+                    $cijena1 = 6;
+                    $cijena2 = 5;
+                    $cijena3 = 4;
+
+                    if($value<=19){
+                        $rezultat=$cijena1*$value;  
+                    }else if($value>19 && $value<100){
+                        $rezultat=$cijena2*$value;   
+                    }else if($value>=100){
+                        $rezultat=$cijena3*$value;   
+                    }
+                    $total+=$rezultat;    /* Izraz daje sumu cijene (u foreachu) */
+                    $pieces = explode(" ", $rezultat);
+                    }
+                    ?>
+                    <h3>Cijena: <?php echo $pieces[0] ?> Kn</h3><br />
+                    <?php endforeach; 
+                    ?>        
+                </div>
+                <div class="col"> 
+                <h3>Ukupno za Platiti: <br /><b><?php echo $total; ?> kn</b></h3>
+                <hr />
+                <h5>Dostava na adresu:<br /><b><?php echo Session::getInstance()->getUser()->homeaddress; ?></b></h5> 
+                </div>            
+            </div>       
+        </div>
+    </div>
+
+    <div class="col">
+        <form class="log-in-form" method="post" 
+         action="<?php echo App::config("url") ?>index/<?php echo Request::post("id") ?>">
+         <button type="submit"><a href="<?php echo App::config("url") ?>narudzba" >Predaj narudžbu</a></button>
+         <button type="submit"><a href="<?php echo App::config("url") ?>narudzba" >Nazad</a></button> 
+         <input class="button expanded" type="submit" value="Odustani" />
+        </form>
+    </div>
+
+    
+</section>
+
+

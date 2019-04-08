@@ -10,14 +10,14 @@ return [
         "name"=>"temida_edunova",
         "user"=>"temida_edunova",
         "password"=>"Edunova123*"
-    ]
+    ] 
 
     /* "db"=> [
         "host"=>"localhost",
         "name"=>"onlineshop",
         "user"=>"edunova",
         "password"=>"edunova"
-    ] */
-
+    ]
+ */
 
 ];

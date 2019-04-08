@@ -63,7 +63,12 @@ class RegisterController
               
             
                 
-                $view->render('narudzba');                                      // za sve ostale korisnike
+                $view->render(
+                    'narudzba',
+                    [
+                       "narudzba"=>Asortiman::read()
+                    ]
+                );                                         // za sve ostale korisnike
             }else{
                 $view->render('prijava',["poruka"=>"Kombinacija email i lozinka ne odgovara..."]);
             }

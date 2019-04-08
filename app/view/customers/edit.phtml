@@ -4,15 +4,15 @@ action="<?php echo App::config("url") ?>customer/edit/<?php echo Request::post("
  <?php include_once "kontrole.phtml" ?>
  
     <div class="form">
-        <div class="grid-x">
-            <div class="large-6 columns" style="padding: 10px;">
+        <div>
+            <div class="large-6 columns" style="padding: 2px;">
+                <button type="submit">Dodaj promjene</a></button>
+            </div>
+            <div class="large-6 columns" style="padding: 2px;">
                 <button type="submit"><a href="<?php echo App::config("url") ?>customer/index" >Odustani</a></button>
             </div>
-            <div class="large-6 columns"  style="padding: 10px;">
-                <input type="submit" class="success button expanded" value="Promjeni" />
-                <?php echo $poruka ?>
-            </div>
         </div>
+        <?php echo $poruka ?>
     </div>
 
 </form>

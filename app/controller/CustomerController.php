@@ -188,7 +188,7 @@ class CustomerController extends ProtectedController
     {
 
         $db=Db::getInstance();
-        $izraz = $db->prepare("select id,firstname,surname,email,userpassword from user where email=:email");
+        $izraz = $db->prepare("select id,firstname,surname,homeaddress,email,userpassword from user where email=:email");
         $izraz->execute(["email"=>Request::post("email")]);
 
         
@@ -201,6 +201,7 @@ class CustomerController extends ProtectedController
                 $user->id=$red->id;
                 $user->firstname=$red->firstname;
                 $user->surname=$red->surname;
+                $user->homeaddress=$red->homeaddress;
                 $user->email=$red->email;
                 $user->firstnameSurname=$red->firstname . " " . $red->surname;
 

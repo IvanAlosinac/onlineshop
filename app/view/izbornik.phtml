@@ -1,13 +1,22 @@
 <style>
 h1 {
+    font-family: 'Source Sans Pro', sans-serif;
     float: left;
     display: initial;
     margin: 0;
     color: white;
 }
-
-
+h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color:black;
+    font-size: 1.25em;
+    
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
 </style>
+
+    
 
 <header>	
 	<nav class="mnu">
@@ -56,7 +65,7 @@ h1 {
                         <li class="mr-lg-4 mr-3">
                             <?php if(Session::getInstance()->isLogiran()): ?>
                             <a href="<?php echo App::config("url") ?>admin/odjava" class="scroll" > Odjava
-                                <?php echo Session::getInstance()->getUser()->firstnameSurname ?>
+                               <?php echo Session::getInstance()->getUser()->firstnameSurname ?>
                             </a>
                             <?php else:?>
                             <a href="<?php echo App::config("url") ?>admin/prijava">Prijava/Registracija</a>

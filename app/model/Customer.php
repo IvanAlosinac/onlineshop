@@ -11,6 +11,7 @@ class Customer{
             a.companyname,
             a.firstname,
             a.surname,
+            a.homeaddress,
             a.phone,
             a.email,
             count(b.id) as total from 
@@ -20,6 +21,7 @@ class Customer{
             a.companyname,
             a.firstname,
             a.surname,
+            a.homeaddress,
             a.phone,
             a.email
             order by a.companyname

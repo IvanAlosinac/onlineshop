@@ -2,19 +2,17 @@
 action="<?php echo App::config("url") ?>product/edit/<?php echo Request::post("id") ?>">
 
  <?php include_once "kontrole.phtml" ?>
- <div class="form">
+    <div class="form">
 
- <div class="grid-x">
-    <div class="large-6 columns" style="padding: 10px;">
-        <a href="<?php echo App::config("url") ?>product/index" class="alert button expanded">
-            Odustani
-        </a>
+        <div class="grid-x">
+                <div class="large-6 columns" style="padding: 2px;">
+                    <button type="submit">Dodaj promjene</a></button>
+                </div>
+                <div class="large-6 columns" style="padding: 2px;">
+                    <button type="submit"><a href="<?php echo App::config("url") ?>product/index" >Odustani</a></button>
+                </div>
+        </div>
+            <?php echo $poruka ?>
     </div>
-    <div class="large-6 columns"  style="padding: 10px;">
-        <input type="submit" class="success button expanded" value="Promjeni" />
-    </div>
-    <?php echo $poruka ?>
- </div>
-  </div>
  
 </form>

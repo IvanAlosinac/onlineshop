@@ -1,6 +1,7 @@
 drop database if exists onlineshop;
 create database onlineshop character set utf8 collate utf8_general_ci;
-use onlineshop;
+use onlineshop; 
+/* alter database onlineshop character set utf8 collate utf8_general_ci; */
 
 create table user(
 id int not null primary key auto_increment,
@@ -59,10 +60,10 @@ alter table product add foreign key (category) references category(id);
 
 #alter table product_price add foreign key (product) references product(id);
 #alter table product_price add foreign key (price) references price(id);
-
+ 
 #1 unos podataka
 
-insert into category(id,categoryname) values 
+ insert into category(id,categoryname) values 
 (null,'Božuri'),
 (null,'Ostalo rezano cvijeće');
 
@@ -81,7 +82,7 @@ insert into user (id,companyname,firstname,surname,homeaddress,phone,email,userp
 insert into product (id,productname,productdescription,priceperpiece,stock,category,productimage) values
 (null,'Coral Charm','Boja:Koraljna',6.00,2500,1,'CoralC.jpg'),
 (null,'Karl Rosenfield','Boja:tamno crvena',6.00,3000,1,'KarlR.jpg'),
-(null,'Sarah Bernhardt','Boja:ružićasta',6.00,6000,1,'SarahB.jpg'),
+(null,'Sarah Bernhardt','Boja:ružićasta',6.00,6000,1,'SarahBB.jpg'),
 (null,'Duchesse de Nemours','Boja:bijela',7.00,500,1,'DuchesseN.jpg'),
 (null,'Ranunculus','Boja:višebojni',1.50,1500,2,'Ranunculus.jpg');
 
@@ -97,7 +98,7 @@ insert into product_order (product,orderproduct) values
 (1,2),(3,2),(4,2),
 (2,3),(3,3),(4,3);
 
-/* create table operater(
+    create table operater(
 	sifra int not null primary key auto_increment,
 	ime varchar(50) not null,
 	prezime varchar(50) not null,
@@ -112,13 +113,13 @@ insert into operater (ime,prezime,email,lozinka) values
 	'alosinac111@gmail.com',
 	'$2y$10$hrFObWL/4l7Zjoxhe981xet9X0Qv82zNAAhv22GSJHIKAquXtPbxq'
 
-); */
+); 
 
 
 
 
 
 select 'Gotov sam';
-
+ 
 
 

@@ -1,18 +1,19 @@
-<form class="log-in-form" method="post" 
+<form class="log-in-form" method="post"
     action="<?php echo App::config("url") ?>product/add">
 
     <?php include_once "kontrole.phtml" ?>
    
-  <div class="form">
-  <div class="grid-x">
-  <div class="large-6 columns" style="padding: 10px;">
-    <button type="submit"><a href="<?php echo App::config("url") ?>product/index">Odustani</a></button>
-
-    <input type="submit" class="button expanded" value="Dodaj novi" />
-    <?php echo $poruka ?>
-  </div>
-  </div>
-  </div>
+    <div class="form">
+      <div>
+        <div class="large-6 columns" style="padding: 2px;">
+          <button type="submit">Dodaj novi</a></button>
+        </div>
+        <div class="large-6 columns" style="padding: 2px;">
+          <button type="submit"><a href="<?php echo App::config("url") ?>product/index">Odustani</a></button>
+        </div>
+      </div>
+      <?php echo $poruka ?>
+    </div>
 </form>
 
 
