@@ -1,23 +1,23 @@
 <?php
 
 return [
-    "url"=>"http://polaznik09.edunova.hr/",
+    "url"=>"http://bozuri.eu/",
     "dev"=>true,
     "nazivApp" => "OPG Alošinac",
     
-    "db"=> [
+    /* "db"=> [
         "host"=>"localhost",
         "name"=>"temida_edunova",
         "user"=>"temida_edunova",
         "password"=>"Edunova123*"
-    ] 
+    ]  */
 
-    /* "db"=> [
-        "host"=>"localhost",
+    "db"=> [
+        "host"=>"207.154.216.18",
         "name"=>"onlineshop",
-        "user"=>"edunova",
-        "password"=>"edunova"
+        "user"=>"root",              // root za mysql
+        "password"=>"O5b8p2K*Baja"   //password za mysql root
     ]
- */
+
 
 ];
