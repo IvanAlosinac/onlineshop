@@ -3,18 +3,11 @@
 class RegisterController 
 {
 
-
     function registerlogin()
     {
         $kontrola = $this->kontrola();
         if($kontrola===true){
             Customer::add();
-           /*  Session::getInstance()->login($user); */
-            
-            /* $view = new View();
-            $view->render(
-                'narudzba'
-            ); */
             $this->log();
         }else{
             $view = new View();

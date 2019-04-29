@@ -6,7 +6,7 @@ class Product
     public static function read()
     {
         $db = Db::getInstance();
-        $izraz = $db->prepare("select * from product group by productname");
+        $izraz = $db->prepare("select * from product");
         $izraz->execute();
         return $izraz->fetchAll();
     }

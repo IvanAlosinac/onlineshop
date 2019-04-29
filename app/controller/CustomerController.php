@@ -25,9 +25,6 @@ class CustomerController extends ProtectedController
         );
         
     }
-    
-
-    
 
     function add()
     {
@@ -53,12 +50,7 @@ class CustomerController extends ProtectedController
         $kontrola = $this->kontrola();
         if($kontrola===true){
             Customer::add();
-           /*  Session::getInstance()->login($user); */
-            
-            /* $view = new View();
-            $view->render(
-                'narudzba'
-            ); */
+           
             $this->log();
         }else{
             $view = new View();
@@ -215,15 +207,8 @@ class CustomerController extends ProtectedController
             }
         }else{
             $view->render('prijava',["poruka"=>"Ne postojeći email..."]);
-        }
-   
-
-    
-        
+        }      
         
     } 
-
-    
-
 
 } 

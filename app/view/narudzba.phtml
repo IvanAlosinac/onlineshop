@@ -1,5 +1,5 @@
-<section class="blog_w3l py-5" id="news">
-	<div class="container py-lg-5">
+<section class="blog_w3l py-5" id="news" >
+	<div class="container py-lg-5" style="padding: 5% 5% 0">
 <!-- <h4 class="heading text-left">Ostalo rezano cvijeće</h4> -->
 				<p class="subs mt-4 text-left mx-auto"  >
                 <?php echo "Dobrodošli" . " " . Session::getInstance()->getUser()->firstname . "!"; ?>
@@ -55,7 +55,7 @@
                         <div class="col">
                             <label>
                                 <input type="number" step="1" name="b1"
-                                value="<?php echo isset($_POST["b1"]) ? $_POST["b1"] : ""; ?>" selected="selected" >
+                                value="<?php echo $_SESSION["b1"]; ?>" selected="selected" >
                             </label>
                         </div>
                         <br />
@@ -84,7 +84,7 @@
                         <div class="col">
                             <label>
                                 <input type="number" step="1" name="b2"
-                                value="<?php echo $_POST["b2"]; ?>"  >
+                                value="<?php echo $_SESSION["b2"]; ?>"  >
                             </label>
                         </div>
                         <br />
@@ -113,7 +113,7 @@
                         <div class="col">
                             <label>
                                 <input type="number" step="1" name="b3"
-                                value="<?php echo $_POST["b3"]; ?>"  >
+                                value="<?php echo $_SESSION["b3"]; ?>"  >
                             </label>
                         </div>
                         <br />
@@ -142,7 +142,7 @@
                         <div class="col">
                             <label>
                                 <input type="number" step="1" name="b4"
-                                value="<?php echo $_POST["b4"]; ?>"  >
+                                value="<?php echo $_SESSION["b4"]; ?>"  >
                             </label>
                         </div>
                         <br />
@@ -171,7 +171,7 @@
                         <div class="col">
                             <label>
                                 <input type="number" step="1" name="b5"
-                                value="<?php echo $_POST["b5"]; ?>"  >
+                                value="<?php echo $_SESSION["b5"]; ?>"  >
                             </label>
                         </div>
                         <br />
@@ -182,15 +182,27 @@
 
                     <div class="col">
                                 <input class="button expanded" type="submit" value="Dodaj u košaricu" /> 
-                                <button type="submit"><a href="<?php echo App::config("url") ?>index" >Odustani</a></button>             
+                                <button type="submit"><a href="<?php echo App::config("url") ?>index" >Odustani</a></button>
+                                <button type="submit"><a href="<?php unset($_SESSION['b1']);
+                                                                     unset($_SESSION['b2']);
+                                                                     unset($_SESSION['b3']);
+                                                                     unset($_SESSION['b4']);
+                                                                     unset($_SESSION['b5']); ?>" >Isprazni košaricu</a></button>            
                     </div>
                     
     </div>	
                    
                     </form>
+                    
                 
     </div>
+
 </section>
- 
+
+<?php
+
+?>
+
+
 
 		

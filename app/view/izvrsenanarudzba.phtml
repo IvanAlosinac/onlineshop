@@ -1,10 +1,25 @@
+<?php
+// Start the session
+session_start();
+?>
+<?php
+$_SESSION["b1"] = $_POST["b1"];
+$_SESSION["b2"] = $_POST["b2"];
+$_SESSION["b3"] = $_POST["b3"];
+$_SESSION["b4"] = $_POST["b4"];
+$_SESSION["b5"] = $_POST["b5"];
+
+$niz = array($_SESSION["b1"],$_SESSION["b2"],$_SESSION["b3"]);
+?>
+
 <section class="blog_w3l py-5" id="news">
     <!-- Naslov -->
     <div class="container py-lg-5">
         <h6><?php echo "Vaša narudžba" . " " . Session::getInstance()->getUser()->firstname . "!"; ?></h6>
-     
+
     </div>
     <!-- Elementi narudžbe -->
+    
     <div class="row blog_w3l_top py-lg-5 py-3 mt-3 ">
         <div class="col-lg-11 blog_w3l_left">
             <div class="row blog_w3l_left1">
@@ -21,11 +36,19 @@
                     <h5>Boja: mix</h5><br /> 
                 </div>
                 <div class="col">
-                    <h3>Naručeno <?php echo $_POST["b1"]?> kom </h3><br />
-                    <h3>Naručeno <?php echo $_POST["b2"]?> kom </h3><br />
-                    <h3>Naručeno <?php echo $_POST["b3"]?> kom </h3><br />
-                    <h3>Naručeno <?php echo $_POST["b4"]?> kom </h3><br />
-                    <h3>Naručeno <?php echo $_POST["b5"]?> kom </h3><br />
+
+                    <form class="log-in-form" method="post" 
+                    action="<?php echo App::config("url") ?>narudzba/email/">
+
+                    <input type="text" name="b1" value="<?php echo $_POST["b1"]?>" ><br /><br />
+                    <input type="text" name="b2" value="<?php echo $_POST["b2"]?>" ><br /><br />
+                    <input type="text" name="b3" value="<?php echo $_POST["b3"]?>" ><br /><br />
+                    <input type="text" name="b4" value="<?php echo $_POST["b4"]?>" ><br /><br />
+                    <input type="text" name="b5" value="<?php echo $_POST["b5"]?>" ><br /><br />
+                       
+                    
+
+
                 </div>
                 <!-- Izračun cijene proizvoda -->
                 <div class="col">
@@ -65,15 +88,11 @@
             </div>       
         </div>
     </div>
-
-    <div class="col">
-        <form class="log-in-form" method="post" 
-         action="<?php echo App::config("url") ?>index/<?php echo Request::post("id") ?>">
-         <button type="submit"><a href="<?php echo App::config("url") ?>narudzba" >Predaj narudžbu</a></button>
-         <button type="submit"><a href="<?php echo App::config("url") ?>narudzba" >Nazad</a></button> 
-         <input class="button expanded" type="submit" value="Odustani" />
-        </form>
-    </div>
+    <button type="submit">Predaj narudžbu</button>
+    <button type="submit"><a href="<?php echo App::config("url") ?>narudzba" >Nazad</a></button>
+    <input class="button expanded" type="submit" value="Odustani" /> 
+    </form>
+    
 
     
 </section>
